@@ -1,0 +1,16 @@
+# Function to compare two strings
+def compare_strings(str1, str2):
+    if str1 == str2:
+        return "The strings are equal."
+    elif str1 > str2:
+        return f'"{str1}" is greater than "{str2}".'
+    else:
+        return f'"{str1}" is less than "{str2}".'
+
+# Accept input from user
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+
+# Compare the input strings
+result = compare_strings(string1, string2)
+print(result)
