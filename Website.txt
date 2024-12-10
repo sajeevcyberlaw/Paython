@@ -1,0 +1,64 @@
+How to create a simple website using paython"
+
+Step1:
+=====
+pip install Flask
+
+Step 2 : Create the project structure:
+======================================
+
+my_website/
+├── app.py
+└── templates/
+    └── index.html
+
+
+Write the app.py file:
+======================
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return '<h1>About Page</h1><p>This is the about page of our simple website.</p>'
+
+@app.route('/contact')
+def contact():
+    return '<h1>Contact Page</h1><p>Contact us at contact@example.com</p>'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+Create the index.html file in the templates folder:
+===================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the home page of our simple website.</p>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+
+
+Run the Flask application: Navigate to the my_website directory in your terminal and run:
+
